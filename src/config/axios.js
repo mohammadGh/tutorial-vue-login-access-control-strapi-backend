@@ -1,11 +1,11 @@
 import axios from "axios"
 
-const isAuthenticated=()=>true
+const isAuthenticated=()=>false
 const getAccessToken=()=>"access-token-sample"
 
 // axios instance
 const axiosService = axios.create({
-    baseURL: import.meta.env.VITE_API_BASEPATH, //configure base_url for all requests
+    baseURL: "/backendapi/api/", //import.meta.env.VITE_API_BASEPATH, //configure base_url for all requests
     timeout: 30000// Request timeout time
   })
 

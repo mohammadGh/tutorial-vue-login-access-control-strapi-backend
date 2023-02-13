@@ -26,7 +26,7 @@ class UserApi {
   }
 
   register(user) {
-    return axios.post(API_URL + 'auth/local/register', {
+    return axios.post('auth/local/register', {
       username: user.username,
       email: user.email,
       password: user.password

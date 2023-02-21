@@ -3,15 +3,14 @@ import {createRouter, createWebHistory} from 'vue-router'
 // public page
 import PublicHomepage from '../pages/PublicHomePage.vue';
 
+// TODO: make these lazy import 
 // user related pages
 import Login from '../pages/user/Login.vue'
 import Signup from '../pages/user/Signup.vue'
 import Profile from '../pages/user/Profile.vue'
-
-// page with specefic access level
+// page with specific access level
 import NormalUserPage from '../pages/NormalUserPage.vue';
 import AdminUserPage from '../pages/AdminUserPage.vue';
-
 
 const routes = [
   {

@@ -7,7 +7,7 @@ const getAccessToken=()=>"access-token-sample"
 
 // axios instance
 const axiosService = axios.create({
-    baseURL: "/cms-backend-api/api/", //configure base_url for all requests
+    baseURL:import.meta.env.VITE_BACKEND_API_BASE_URL , //configure base_url for all requests
     timeout: 30000// Request timeout time
   })
 

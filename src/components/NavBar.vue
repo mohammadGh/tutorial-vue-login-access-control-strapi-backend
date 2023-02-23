@@ -1,4 +1,10 @@
 <script setup>
+import { getUserStore } from '@/stores'
+import { storeToRefs } from 'pinia'
+
+const userStore = getUserStore()
+const {user}= storeToRefs(userStore)
+
 </script>
 
 <template>
@@ -10,9 +16,9 @@
   <li><router-link to="/normal-user-page/">Normal User Page</router-link></li>
   <li><router-link to="/admin-user-page/">Admin User Page</router-link></li>
 
-  <li><router-link to="/login/">Login</router-link></li>
-  <li><router-link to="/signup/">Signup</router-link></li>
-  <li><router-link to="/profile/">User Profile</router-link></li>
+  <li v-if="!user"><router-link  to="/login/">Login</router-link></li>
+  <li v-if="!user"><router-link  to="/signup/">Signup</router-link></li>
+  <li v-if="user"><router-link  to="/profile/">User Profile</router-link></li>
 
 </ul>
 </nav>

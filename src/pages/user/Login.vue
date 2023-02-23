@@ -4,7 +4,7 @@ import * as yup from "yup"
 import UserApi from '../../api/user.js';
 
  const credential=defineProps({})
-
+ const message=ref("")
  const schema = yup.object({
   username: yup.string().required(),
   password: yup.string().required().min(6),

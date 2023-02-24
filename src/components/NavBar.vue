@@ -1,8 +1,8 @@
 <script setup>
-import { getUserStore } from '@/stores'
+import { useUserStore } from '@/stores'
 import { storeToRefs } from 'pinia'
 
-const userStore = getUserStore()
+const userStore = useUserStore()
 const {user}= storeToRefs(userStore)
 
 </script>

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import * as yup from "yup"
-import { getUserStore } from '@/stores'
+import { useUserStore } from '@/stores'
 
 const credential = defineProps({})
 const message = ref("")
@@ -12,7 +12,7 @@ const schema = yup.object({
 });
 
 function onSubmit(values, {setErrors}) {
-  const userStore = getUserStore()
+  const userStore = useUserStore()
   const { username, password } = values
   
   userStore

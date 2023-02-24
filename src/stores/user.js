@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import UserApi from '@/api/user.js'
 import router from '@/router/router.js'
 
-export const getUserStore = defineStore('user',{
+export const useUserStore = defineStore('user',{
     state: () => ({
         user: JSON.parse(localStorage.getItem('user')),
         returnUrl: null
@@ -23,6 +23,11 @@ export const getUserStore = defineStore('user',{
             this.user = null;
             localStorage.removeItem('user');
             router.push('/login');
-        }
+        },
+        async register(username, email, password) {
+            const userResponse = await UserApi.register({ username,email, password });
+            // redirect to previous url or login page to login
+            router.push(this.returnUrl || '/login');
+        },
     }
 })
